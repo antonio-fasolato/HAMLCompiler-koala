@@ -4,10 +4,10 @@
 
 'use strict';
 
-var fs = require('fs'),
-	path = require('path'),
-	FileManager = global.getFileManager(),
-    Compiler    = require(FileManager.appScriptsDir + '/Compiler');
+var 	fs = require('fs'),
+			path = require('path'),
+			FileManager = global.getFileManager(),
+    	Compiler    = require(FileManager.appScriptsDir + '/Compiler');
 
 /**
  * My Compiler
