@@ -10,7 +10,7 @@
 	"fileTypes": [{
 		"extension": "haml",
 		"output": "html",
-		"icon": "",
+		"icon": "haml.png",
 		"category": ""
 	}],
 	"options": [],
