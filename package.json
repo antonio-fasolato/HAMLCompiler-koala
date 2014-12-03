@@ -3,8 +3,10 @@
 	"display": "HAML compiler",
 	"description": "A koala extension that adds support for compiling HAML files.",
 	"keywords": ["koala", "HAML", "compiler"],
+
 	"version": "0.1.0",
 	"koalaVersion": ">=2.0.0",
+
 	"dependancies" : {},
 	"main": "HAMLCompiler.js",
 	"fileTypes": [{
@@ -13,8 +15,18 @@
 		"icon": "haml.png",
 		"category": ""
 	}],
-	"options": [],
+
+	"options": [
+		{
+			"type": "text",
+			"name": "commandPath",
+			"display": "Use the HAML executable at this path (leave haml if it is in your PATH)",
+			"default": "haml",
+			"placeholder": "Default: haml"
+		}
+	],
 	"advanced": [],
 	"projectSettings": "",
+
 	"libraries": []
 }
