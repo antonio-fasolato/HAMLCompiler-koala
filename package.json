@@ -18,6 +18,24 @@
 
 	"options": [
 		{
+			"type": "droplist",
+			"name": "outputStyle",
+			"display": "Output Style",
+			"items": [
+				{
+					"value": "I",
+					"text": "indented"
+				},
+				{
+					"value": "U",
+					"text": "Ugly"
+				}
+			],
+			"default": "I"
+		}
+	],
+	"advanced": [
+		{
 			"type": "text",
 			"name": "commandPath",
 			"display": "Use the HAML executable at this path (leave haml if it is in your PATH)",
@@ -25,7 +43,6 @@
 			"placeholder": "Default: haml"
 		}
 	],
-	"advanced": [],
 	"projectSettings": "",
 
 	"libraries": []

@@ -1,5 +1,5 @@
 {
-  "cmd": "build.bat",
-  "args": [],
+  "cmd": "zip",
+  "args": ["build/HAMLCompiler.koala-compiler", "*.js", "*.json", "*.png"],
   "sh": false
 }

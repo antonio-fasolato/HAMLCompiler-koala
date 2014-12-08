@@ -7,14 +7,14 @@
 var 	fs = require('fs'),
 			path = require('path'),
 			FileManager = global.getFileManager(),
-    	Compiler    = require(FileManager.appScriptsDir + '/Compiler');
+    	Compiler    = require(FileManager.appScriptsDir + '/Compiler.js');
 
 /**
  * My Compiler
  * @param {object} config compiler config
  */
 function HAMLCompiler(config) {
-   Compiler.call(this, config);
+	Compiler.call(this, config);
 }
 require('util').inherits(HAMLCompiler, Compiler);
 
@@ -33,9 +33,18 @@ HAMLCompiler.prototype.compile = function (file, emitter) {
 								settings = file.settings || {},
 								argv = [filePath, output];
 
+		var globalSettings = this.getGlobalSettings() || {};
 
+		console.dir("Global settings", globalSettings);
+		console.dir("File settings", settings);
 
-		exec(["haml"].concat(argv).join(" "), {cwd: path.dirname(filePath), timeout: 5000}, function(error, stdout, stderr) {
+		if(settings.outputStyle === "U") {
+			argv = ['--style', 'ugly'].concat(argv);
+		}
+
+		console.dir("Command", [settings.commandPath].concat(argv).join(" "));
+
+		exec([settings.commandPath].concat(argv).join(" "), {cwd: path.dirname(filePath), timeout: 5000}, function(error, stdout, stderr) {
 				if(error !== null) {
 				emitter.emit("fail");
 				self.throwError(stderr, filePath);
